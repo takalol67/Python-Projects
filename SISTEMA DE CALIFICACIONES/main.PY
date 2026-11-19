@@ -33,7 +33,15 @@ def registrar_estudiantes(): #para hacer una funcion se usa def primero seguido 
         "calificaciones":calificaciones
     }
     print("Se ha confirmado el registro de estudiante exitosamente.")
-    estudiantes.append(estudiante) #lista.append(elemento)                
+    estudiantes.append(estudiante) #lista.append(elemento) 
+def mostrar_estudiantes():
+    for estudiante in estudiantes:
+        print(estudiante["nombre"]) #sirve para entrar al diccionario y agarrar la informacion
+        print(estudiante["edad"])
+        print(estudiante["calificaciones"])
+        print("------------------------")
+
+
 while opcion != 5:
     match opcion:
         case 1:
@@ -43,7 +51,7 @@ while opcion != 5:
                 
 
         case 2: 
-            print("Mostrar estudiantes")
+            mostrar_estudiantes()
         case 3:
             print("Buscar estudiante")
         case 4: 
