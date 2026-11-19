@@ -12,7 +12,7 @@
 #- No repitas código innecesariamente.
 #- Valida que las calificaciones estén entre 0 y 10.
 #- No utilices clases todavía; más adelante lo convertiremos a POO.
-
+#HELLO WORLD
 estudiantes = [] # es importante crear una lista para que no se confunda el programa y guarde las calificaciones de una persona diferente en la misma lista.
 print("\n===== SISTEMA DE CALIFICACIONES =====\n ")
 print("1. Registrar estudiante\n2. Mostrar estudiantes\n3. Buscar estudiante\n4. Calcular promedios\n5. Salir")
