@@ -22,9 +22,9 @@ print("1. Registrar estudiante\n2. Mostrar estudiantes\n3. Buscar estudiante\n4.
 opcion= int(input("Seleccione una opcion: "))
 def registrar_estudiantes(): #para hacer una funcion se usa def primero seguido del nombre de la funciion doble parentesis y dos puntos ejemplo def nombre_funcion():  
     duplicado=False #para verificar que un numero es duplicado o no
-    nombre=input("Di el nombre del estudiante: ") 
+    nombre=input("Di el nombre del estudiante: ").lower().strip() 
     for estudiante in estudiantes:
-        if nombre == estudiante["nombre"]:
+        if nombre == estudiante["nombre"].lower().strip():
             print("El nombre ya fue registrado.")
             duplicado=True
     if duplicado == True:
@@ -60,18 +60,21 @@ def mostrar_estudiantes():
             print("------------------------")
 
 def promedio_estudiantes():
-    for estudiante in estudiantes:
-        calificaciones = estudiante["calificaciones"]
-        nombre_estudiante=estudiante["nombre"] #sirve para traer el nombre de las personas del diccionario
-        suma= sum(calificaciones)
-        cantidad_calificaciones=len(calificaciones)
-        promediofinal= suma/cantidad_calificaciones
-        print(f"El promedio final de {nombre_estudiante} es de {promediofinal:.2f}\n") #el :.2f lo que hace es mostrar solo 2 decimales.
-        if promediofinal >= 6   :
-            print("Felicidades. Haz aprobado")
-            
-        else:
-            print("Lo lamento. Haz reprobado")
+    if not estudiantes:
+        print("No hay estudiantes para promediar")
+    else:
+        for estudiante in estudiantes:
+            calificaciones = estudiante["calificaciones"]
+            nombre_estudiante=estudiante["nombre"] #sirve para traer el nombre de las personas del diccionario
+            suma= sum(calificaciones)
+            cantidad_calificaciones=len(calificaciones)
+            promediofinal= suma/cantidad_calificaciones
+            print(f"El promedio final de {nombre_estudiante} es de {promediofinal:.2f}\n") #el :.2f lo que hace es mostrar solo 2 decimales.
+            if promediofinal >= 6   :
+                print("Felicidades. Haz aprobado")
+                
+            else:
+                print("Lo lamento. Haz reprobado")
 def buscar_estudiante():
     busqueda=input("dime el estudiante a buscar ").lower().strip() #.lower convierte todas las letras de una cadena de texto a minusculas.
     for estudiante in estudiantes:
@@ -89,28 +92,35 @@ def buscar_estudiante():
         
         
 
-while opcion <6:
-    if opcion==5:
-        break
-    match opcion:
-        case 1:
-            registrar_estudiantes()     
-            
-                
-                
-
-        case 2: 
-            mostrar_estudiantes()
-        case 3:
-            buscar_estudiante()
-
-        case 4: 
-            promedio_estudiantes()
-        case _:
-            print("Opcion no valida")
+while opcion !=5:
     print("\n===== SISTEMA DE CALIFICACIONES =====\n ")
     print("1. Registrar estudiante\n2. Mostrar estudiantes\n3. Buscar estudiante\n4. Calcular promedios\n5. Salir")
     opcion= int(input("Seleccione una opcion: "))
+    
+    if opcion >=6 or opcion <=0:
+        print("por favor seleccione una opcion valida")
+        
+        
+    else:
+        match opcion:
+            case 1:
+                registrar_estudiantes()     
+                
+                    
+                    
+
+            case 2: 
+                mostrar_estudiantes()
+            case 3:
+                buscar_estudiante()
+
+            case 4: 
+                promedio_estudiantes()
+            case _:
+                print("Opcion no valida")
+                print("por favor seleccione una opcion valida")
+    
+        
 
 
 
