@@ -23,6 +23,9 @@ opcion= int(input("Seleccione una opcion: "))
 def registrar_estudiantes(): #para hacer una funcion se usa def primero seguido del nombre de la funciion doble parentesis y dos puntos ejemplo def nombre_funcion():  
     nombre=input("Di el nombre del estudiante: ") 
     edad=int(input("Di la edad del estudiante: "))
+    while edad <=0:
+        print("Edad Invalida")
+        edad=int(input("Di la edad del estudiante: "))
     calificaciones=[]
     for i in range(3): 
         nota=float(input("Di la calificacion del estudiante: "))
@@ -38,10 +41,10 @@ def registrar_estudiantes(): #para hacer una funcion se usa def primero seguido 
     print("Se ha confirmado el registro de estudiante exitosamente.")
     estudiantes.append(estudiante) #lista.append(elemento) 
 def mostrar_estudiantes():
-    if not estudiantes:
+    if not estudiantes: #not sirve literalmente como un no, ahi diria, si no hay estudiantes xd
         print("No hay estudiantes actualmente.")
     else:
-        for estudiante in estudiantes: #for que muestra la informacion de los estudiantes.|
+        for estudiante in estudiantes: #for que muestra la informacion de los estudiantes.
             
             print(estudiante["nombre"]) #sirve para entrar al diccionario y agarrar la informacion
             print(estudiante["edad"])
