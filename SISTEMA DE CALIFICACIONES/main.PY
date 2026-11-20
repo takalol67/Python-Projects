@@ -21,25 +21,33 @@ print("\n===== SISTEMA DE CALIFICACIONES =====\n ")
 print("1. Registrar estudiante\n2. Mostrar estudiantes\n3. Buscar estudiante\n4. Calcular promedios\n5. Salir")
 opcion= int(input("Seleccione una opcion: "))
 def registrar_estudiantes(): #para hacer una funcion se usa def primero seguido del nombre de la funciion doble parentesis y dos puntos ejemplo def nombre_funcion():  
+    duplicado=False #para verificar que un numero es duplicado o no
     nombre=input("Di el nombre del estudiante: ") 
-    edad=int(input("Di la edad del estudiante: "))
-    while edad <=0:
-        print("Edad Invalida")
+    for estudiante in estudiantes:
+        if nombre == estudiante["nombre"]:
+            print("El nombre ya fue registrado.")
+            duplicado=True
+    if duplicado == True:
+        print("No puede continuar con el registro")
+    else:
         edad=int(input("Di la edad del estudiante: "))
-    calificaciones=[]
-    for i in range(3): 
-        nota=float(input("Di la calificacion del estudiante: "))
-        while nota < 0 or nota > 10: 
-            print("Calificacion Invalida")  
-            nota=float(input("Vuelve a dar otra calificacion que si sea valida."))
-        calificaciones.append(nota)
-    estudiante = { #ESTO ES UN DICCIONARIO SE USA PARA ALMACENAR INFORMACION DE ALGO O ALGUIEN EN UN ARREGLO, FALTA USAR APPEND.
-        "nombre": nombre,
-        "edad": edad,
-        "calificaciones":calificaciones
-    }
-    print("Se ha confirmado el registro de estudiante exitosamente.")
-    estudiantes.append(estudiante) #lista.append(elemento) 
+        while edad <=0:
+            print("Edad Invalida")
+            edad=int(input("Di la edad del estudiante: "))
+        calificaciones=[]
+        for i in range(3): 
+            nota=float(input("Di la calificacion del estudiante: "))
+            while nota < 0 or nota > 10: 
+                print("Calificacion Invalida")  
+                nota=float(input("Vuelve a dar otra calificacion que si sea valida."))
+            calificaciones.append(nota)
+        estudiante = { #ESTO ES UN DICCIONARIO SE USA PARA ALMACENAR INFORMACION DE ALGO O ALGUIEN EN UN ARREGLO, FALTA USAR APPEND.
+            "nombre": nombre,
+            "edad": edad,
+            "calificaciones":calificaciones
+        }
+        print("Se ha confirmado el registro de estudiante exitosamente.")
+        estudiantes.append(estudiante) #lista.append(elemento) 
 def mostrar_estudiantes():
     if not estudiantes: #not sirve literalmente como un no, ahi diria, si no hay estudiantes xd
         print("No hay estudiantes actualmente.")
