@@ -38,11 +38,15 @@ def registrar_estudiantes(): #para hacer una funcion se usa def primero seguido 
     print("Se ha confirmado el registro de estudiante exitosamente.")
     estudiantes.append(estudiante) #lista.append(elemento) 
 def mostrar_estudiantes():
-    for estudiante in estudiantes: #for que muestra la informacion de los estudiantes.|
-        print(estudiante["nombre"]) #sirve para entrar al diccionario y agarrar la informacion
-        print(estudiante["edad"])
-        print(estudiante["calificaciones"])
-        print("------------------------")
+    if not estudiantes:
+        print("No hay estudiantes actualmente.")
+    else:
+        for estudiante in estudiantes: #for que muestra la informacion de los estudiantes.|
+            
+            print(estudiante["nombre"]) #sirve para entrar al diccionario y agarrar la informacion
+            print(estudiante["edad"])
+            print(estudiante["calificaciones"])
+            print("------------------------")
 
 def promedio_estudiantes():
     for estudiante in estudiantes:
