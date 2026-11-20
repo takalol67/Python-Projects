@@ -48,7 +48,13 @@ def promedio_estudiantes():
         suma= sum(calificaciones)
         cantidad_calificaciones=len(calificaciones)
         promediofinal= suma/cantidad_calificaciones
-        print(f"El promedio final de {nombre_estudiante} es de {promediofinal:.2f}\n")
+        print(f"El promedio final de {nombre_estudiante} es de {promediofinal:.2f}\n") #el :.2f lo que hace es mostrar solo 2 decimales.
+        if promediofinal >= 6:
+            print("Felicidades. Haz aprobado")
+            
+        else:
+            print("Lo lamento. Haz reprobado")
+             
         
         
 
