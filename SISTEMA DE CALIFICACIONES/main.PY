@@ -21,7 +21,7 @@ def registrar_estudiantes(): #para hacer una funcion se usa def primero seguido 
     nombre=input("Di el nombre del estudiante: ") 
     edad=int(input("Di la edad del estudiante: "))
     calificaciones=[]
-    for i in range(3):
+    for i in range(3): 
         nota=float(input("Di la calificacion del estudiante: "))
         while nota < 0 or nota > 10: 
             print("Calificacion Invalida")  
@@ -35,12 +35,22 @@ def registrar_estudiantes(): #para hacer una funcion se usa def primero seguido 
     print("Se ha confirmado el registro de estudiante exitosamente.")
     estudiantes.append(estudiante) #lista.append(elemento) 
 def mostrar_estudiantes():
-    for estudiante in estudiantes:
+    for estudiante in estudiantes: #for que muestra la informacion de los estudiantes.|
         print(estudiante["nombre"]) #sirve para entrar al diccionario y agarrar la informacion
         print(estudiante["edad"])
         print(estudiante["calificaciones"])
         print("------------------------")
 
+def promedio_estudiantes():
+    for estudiante in estudiantes:
+        calificaciones = estudiante["calificaciones"]
+        nombre_estudiante=estudiante["nombre"] #sirve para traer el nombre de las personas del diccionario
+        suma= sum(calificaciones)
+        cantidad_calificaciones=len(calificaciones)
+        promediofinal= suma/cantidad_calificaciones
+        print(f"El promedio final de {nombre_estudiante} es de {promediofinal:.2f}\n")
+        
+        
 
 while opcion != 5:
     match opcion:
@@ -55,7 +65,8 @@ while opcion != 5:
         case 3:
             print("Buscar estudiante")
         case 4: 
-            print("Calcular promedios")
+            promedio_estudiantes()
+
         case 5:
             print("Salir")
         case _:
