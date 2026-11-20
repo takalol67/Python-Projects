@@ -67,7 +67,7 @@ def promedio_estudiantes():
             calificaciones = estudiante["calificaciones"]
             nombre_estudiante=estudiante["nombre"] #sirve para traer el nombre de las personas del diccionario
             suma= sum(calificaciones)
-            cantidad_calificaciones=len(calificaciones)
+            cantidad_calificaciones=len(calificaciones) #función integrada que devuelve la longitud (el número de elementos o caracteres) de un objeto.
             promediofinal= suma/cantidad_calificaciones
             print(f"El promedio final de {nombre_estudiante} es de {promediofinal:.2f}\n") #el :.2f lo que hace es mostrar solo 2 decimales.
             if promediofinal >= 6   :
