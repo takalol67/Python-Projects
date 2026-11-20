@@ -1,3 +1,4 @@
+
 #Requisitos
 #El programa debe permitir:
 #1. Registrar estudiantes.
@@ -14,6 +15,8 @@
 #- No utilices clases todavía; más adelante lo convertiremos a POO.
 #HELLO WORLD
 estudiantes = [] # es importante crear una lista para que no se confunda el programa y guarde las calificaciones de una persona diferente en la misma lista.
+
+
 print("\n===== SISTEMA DE CALIFICACIONES =====\n ")
 print("1. Registrar estudiante\n2. Mostrar estudiantes\n3. Buscar estudiante\n4. Calcular promedios\n5. Salir")
 opcion= int(input("Seleccione una opcion: "))
@@ -49,16 +52,31 @@ def promedio_estudiantes():
         cantidad_calificaciones=len(calificaciones)
         promediofinal= suma/cantidad_calificaciones
         print(f"El promedio final de {nombre_estudiante} es de {promediofinal:.2f}\n") #el :.2f lo que hace es mostrar solo 2 decimales.
-        if promediofinal >= 6:
+        if promediofinal >= 6   :
             print("Felicidades. Haz aprobado")
             
         else:
             print("Lo lamento. Haz reprobado")
+def buscar_estudiante():
+    busqueda=input("dime el estudiante a buscar ").lower().strip() #.lower convierte todas las letras de una cadena de texto a minusculas.
+    for estudiante in estudiantes:
+        nombre_estudiante=estudiante["nombre"].lower().strip() #.strip elimina espacios innecesarios.
+        if busqueda == nombre_estudiante:
+            print("encontraste al usuario")
+            print(estudiante["nombre"]) 
+            print(estudiante["edad"])
+            print(estudiante["calificaciones"])
+            break
+    else:
+        print("No encontraste el usuario")
+
              
         
         
 
-while opcion != 5:
+while opcion <6:
+    if opcion==5:
+        break
     match opcion:
         case 1:
             registrar_estudiantes()     
@@ -69,12 +87,10 @@ while opcion != 5:
         case 2: 
             mostrar_estudiantes()
         case 3:
-            print("Buscar estudiante")
+            buscar_estudiante()
+
         case 4: 
             promedio_estudiantes()
-
-        case 5:
-            print("Salir")
         case _:
             print("Opcion no valida")
     print("\n===== SISTEMA DE CALIFICACIONES =====\n ")
