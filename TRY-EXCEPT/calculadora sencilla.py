@@ -20,7 +20,8 @@
 n1=None #inicializa variables pero sin valor
 n2=None
 numero_valido2=False
-
+print("||||||||||| CALCULADORA ||||||||||||")
+opcion=int(input(("Elige una opcion\n1.-Sumar\n2.-Restar\n3.-Multiplicar\n4.-Dividir")))
 while not numero_valido2: #mientras numero valido sea falso osea no sea validado.
     
     try:
@@ -38,11 +39,30 @@ def dividir(n1,n2):
  
     return n1/n2
 
+def sumar(n1,n2):
+    return n1+n2
+def restar(n1,n2):
+    return n1-n2
+
+def multiplicar(n1,n2):
+    return n1*n2
 print("N1:", n1)
 print("N2:", n2)
 
 resultado = dividir(n1, n2)
 
 print("Resultado:", resultado)
+
+suma=sumar(n1,n2)
+print("El resultado de la suma es:",suma)
+
+
+resta=restar(n1,n2)
+print("El resultado de la resta es:",resta)
+
+while opcion <=5:
+    match opcion:
+        case 1: 
+    
 
 
