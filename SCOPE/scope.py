@@ -17,7 +17,7 @@ resultado=aumentar(contador)
 print(resultado)
 
 def calcular_descuento(precio,descuento):
-    descuento_total= precio - (precio * descuento)
+    descuento_total= precio - (precio * descuento)  #variable local.
     return descuento_total
 
 resultado=calcular_descuento(800,0.15)

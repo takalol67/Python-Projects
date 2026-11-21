@@ -75,6 +75,7 @@ def promedio_estudiantes():
                 
             else:
                 print("Lo lamento. Haz reprobado")
+
 def buscar_estudiante():
     busqueda=input("dime el estudiante a buscar ").lower().strip() #.lower convierte todas las letras de una cadena de texto a minusculas.
     for estudiante in estudiantes:
