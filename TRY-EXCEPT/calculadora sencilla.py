@@ -3,17 +3,52 @@
 # - Permita sumar, restar, multiplicar y dividir.
 # - Controle entradas inválidas (ValueError).
 # - Evite divisiones entre cero (ZeroDivisionError).
-# Primer paso: crea una función llamada dividir(numero1, numero2) que:
-# 1. Reciba dos números.
-# 2. Compruebe si numero2 es igual a cero.
-# 3. Si es cero, muestre un mensaje.
-# 4. Si no es cero, devuelva el resultado mediante return.
-
+# def dividir(n1,n2):
+#     numero_valido= False
+#     while not numero_valido:
+#         try:
+#             if n2 ==0:
+#                 print("Por favor diga un numero valido q no sea 0   ")
+                
+#             else:
+#                 numero_valido=True
+#                 division=n1/n2
+#                 return division
+#         except ValueError:
+#             print("Di un numero valido.")
+# None representa la ausencia de un valor en python
 def dividir(n1,n2):
-    numero1=float(input("Diga el primer numero a dividir."))
-    numero2=float(input("Diga el segundo numero a dividir"))
-    n1=numero1
-    n2=numero2
-    division= numero1/numero2
-    return division
+    cero=False
+    numero_valido2=False
+    while not cero and numero_valido2:
+        try:
+            division= n1/n2
+            cero=True
+            numero_valido2: True
+            return division
+            
+            
+        except ZeroDivisionError:
+            print("No puedes dividir entre 0.")
+            n2=float(input("Diga el segundo numero:  "))
     
+        
+try:
+    n1=float(input("Diga el primer numero: "))
+    n2=float(input("Diga el segundo numero:  "))
+    numero_valido2=True
+except ValueError:
+    print("Diga un numero valido.")
+    n2=float(input("Diga el segundo numero: "))
+
+        
+        
+        
+    
+
+
+
+
+
+resultado= dividir(n1,n2)
+print(resultado)
