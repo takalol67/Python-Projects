@@ -17,25 +17,32 @@
 #         except ValueError:
 #             print("Di un numero valido.")
 # None representa la ausencia de un valor en python
-def dividir(n1,n2):
- return n1/n2
-            division= n1/n2
-            cero=True
-            return division
-            
-
-    
-        
-
+n1=None #inicializa variables pero sin valor
+n2=None
 numero_valido2=False
-cero=False
-while not numero_valido2 and cero:
+
+while not numero_valido2: #mientras numero valido sea falso osea no sea validado.
+    
     try:
         n1=float(input("Diga el primer numero: "))
         n2=float(input("Diga el segundo numero:  "))
-        numero_valido2=True
+        
+        if n2==0:
+                print("No puedes dividir entre 0.")
+        else:
+             numero_valido2 =True #cuando valida que no es un 0 y si es un numero y no un str pues sale del while.
     except ValueError:
         print("Diga un numero valido.")
-    except ZeroDivisionError:
-        print("No puedes dividir entre 0.")
-        n2=float(input("Diga el segundo numero:  "))
+  
+def dividir(n1,n2):
+ 
+    return n1/n2
+
+print("N1:", n1)
+print("N2:", n2)
+
+resultado = dividir(n1, n2)
+
+print("Resultado:", resultado)
+
+
