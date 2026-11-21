@@ -24,3 +24,10 @@ while edad_valida == False:
     except ValueError:
         print("Ingresa un numero valido.")
 
+# tipos de errores en except 
+#ValueError: ocurre cuando el tipo de dato es correcto, pero el valor no es valido para la operacion.
+# edad = int("hola")
+# TypeError: ocurre cuando intentamos realizar una operacion con tipos de datos incompatibles.
+# resultado = "Hola" + 5
+# ZeroDivisionError: Ocurre cuando intentamos dividir entre 0
+# resultado = 10 / 0
